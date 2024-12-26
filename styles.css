@@ -1,0 +1,235 @@
+/* styles.css */
+
+/* พื้นหลังท้องฟ้ายามค่ำคืน */
+html, body {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+    overflow-y: auto; /* ให้เลื่อนหน้าจอลงได้ */
+    background: linear-gradient(to bottom, #1d2b64, #f8cdda); /* ท้องฟ้ายามค่ำคืน */
+}
+
+/* สไตล์ของส่วน header */
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* สีดำโปร่งใส */
+    color: white;
+    padding: 50px;
+}
+
+header h1 {
+    font-size: 3.5em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+/* ภาพในส่วน header */
+.header-image {
+    width: 70%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* สไตล์ของเคาน์ดาวน์ */
+.countdown {
+    background-color: rgba(255, 255, 255, 0.8); /* สีขาวอ่อน */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#countdown-timer p {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* สไตล์ของประวัติความเป็นมาของวันคริสต์มาส */
+.history {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.history h3 {
+    font-size: 2.5em;
+    color: #e63946; /* สีแดง */
+}
+
+.history p {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.history-image {
+    width: 80%;
+    max-width: 700px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* สไตล์ของส่วนคำอวยพร */
+.greeting {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* สไตล์ของ footer */
+footer {
+    background-color: #e63946;
+    color: white;
+    padding: 10px;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+/* การสร้างดาวตก */
+.star {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 1.5em;
+    user-select: none;
+    pointer-events: none;
+    animation: starAnimation 5s linear infinite;
+}
+
+@keyframes starAnimation {
+    0% { top: -10px; opacity: 0.8; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* การทำให้ดาวตกตกลงจากตำแหน่งต่างๆ */
+.star:nth-child(odd) {
+    animation-duration: 7s;
+    animation-delay: 2s;
+    left: 10%;
+}
+
+.star:nth-child(even) {
+    animation-duration: 8s;
+    animation-delay: 3s;
+    left: 70%;
+}
+
+/* Media Queries สำหรับการแสดงผลที่ดีขึ้นบนหน้าจอขนาดต่างๆ */
+
+/* สำหรับหน้าจอขนาดเล็ก (มือถือ) */
+@media (max-width: 768px) {
+    header {
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .header-image {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .countdown {
+        padding: 15px;
+    }
+
+    .history {
+        padding: 20px;
+    }
+
+    .greeting {
+        font-size: 1.2em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
+
+/* สำหรับแท็บเล็ต (ขนาดหน้าจอกลาง) */
+@media (max-width: 1024px) {
+    header {
+        padding: 40px;
+    }
+
+    header h1 {
+        font-size: 2.8em;
+    }
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .header-image {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .countdown {
+        padding: 20px;
+    }
+
+    .history {
+        padding: 25px;
+    }
+
+    .greeting {
+        font-size: 1.4em;
+    }
+
+    footer {
+        font-size: 0.9em;
+    }
+}
+
+/* สำหรับหน้าจอขนาดใหญ่ (เดสก์ท็อป) */
+@media (min-width: 1200px) {
+    header {
+        padding: 60px;
+    }
+
+    header h1 {
+        font-size: 3.5em;
+    }
+
+    header p {
+        font-size: 1.3em;
+    }
+
+    .header-image {
+        width: 60%;
+        max-width: 700px;
+    }
+
+    .countdown {
+        padding: 30px;
+    }
+
+    .history {
+        padding: 40px;
+    }
+
+    .greeting {
+        font-size: 1.6em;
+    }
+
+    footer {
+        font-size: 1em;
+    }
+}
